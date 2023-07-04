@@ -2,7 +2,7 @@ import React from "react";
 
 const SignUpFooter = ({ link }) => {
   return (
-    <section className="py-8 space-y-8">
+    <section className="py-8 space-y-7">
       <a className="block text-right text-hoverBtn underline" href="#">
         {link}
       </a>
