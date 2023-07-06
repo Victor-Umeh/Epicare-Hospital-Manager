@@ -1,10 +1,11 @@
 import { useState } from "react";
-
+import { Link } from "react-router-dom";
 //components
 import SignUpHeader from "../../../../components/SignUpHeader";
 import SignUpFooter from "../../../../components/SignUpFooter";
 import TextInput from "../../../../components/ui-widgets/TextInput";
 import PasswordInput from "../../../../components/ui-widgets/PasswordInput";
+import NumInput from "../../../../components/ui-widgets/NumInput";
 import Button from "../../../../components/ui-widgets/Button";
 
 const CreateAccount = () => {
@@ -17,7 +18,7 @@ const CreateAccount = () => {
       />
 
       <section className="pt-6">
-        {/* Form nextr button */}
+        {/* Form nextSlide button */}
         <div className="flex justify-center gap-4 ">
           <button
             className={`${
@@ -38,12 +39,12 @@ const CreateAccount = () => {
         </div>
 
         <form action="">
-          <section className="flex overflow-x-hidden">
+          <section className="flex px-2 overflow-x-hidden">
             {/* next 1 */}
             <section
-              className={` ${
+              className={`${
                 next ? "translate-x-0 min-w-full" : "-translate-x-[500%]"
-              } transition-all duration-500`}
+              } transition-all duration-500 ease-out`}
             >
               <TextInput
                 mt="mt-8"
@@ -64,41 +65,54 @@ const CreateAccount = () => {
                 placeholder="Job title"
               />
               <PasswordInput mt="mt-8" />
-              <Button mt="mt-10" text="Proceed" stateBg="bg-disabled" />
+              <Link to="/login">
+                <Button mt="mt-10" text="Proceed" stateBg="bg-disabled" />
+              </Link>
             </section>
-
             {/* next 2 */}
             <section
               className={`${
-                next
-                  ? "translate-x-[500%]"
-                  : "-translate-x-[4.6rem] min-w-[98%]"
-              } transition-all duration-300`}
+                next ? "translate-x-[500%]" : "translate-x-[-4.8rem] min-w-full"
+              } transition-all duration-500 ease-out`}
             >
               <TextInput
                 mt="mt-8"
                 type="text"
-                label="Name"
-                placeholder="Your name"
-              />
-              <TextInput
-                mt="mt-8"
-                type="email"
-                label="Email address"
-                placeholder="example@gmail.com"
+                label="Hospital name"
+                placeholder="Name of hospital"
               />
               <TextInput
                 mt="mt-8"
                 type="text"
-                label="Job title"
-                placeholder="Job title"
+                label="Hospital type"
+                placeholder="E.g private, public"
               />
-              <PasswordInput mt="mt-8" />
-              <Button mt="mt-10" text="Proceed" />
+              <NumInput
+                mt="mt-8"
+                label="Phone number"
+                placeholder="00000000000 (optional)"
+              />
+              <TextInput
+                mt="mt-8"
+                type="text"
+                label="Address"
+                placeholder="Rukuba road"
+              />
+              <NumInput
+                mt="mt-8"
+                label="Hospital registration number"
+                placeholder="00000000000"
+              />
+              <Link to="/login">
+                <Button mt="mt-10" text="Proceed" />
+              </Link>
             </section>
           </section>
         </form>
-        <SignUpFooter />
+
+        <div className={next ? "-translate-y-[16rem]" : null}>
+          <SignUpFooter />
+        </div>
       </section>
     </>
   );

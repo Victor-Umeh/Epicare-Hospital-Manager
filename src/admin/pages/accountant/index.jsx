@@ -1,7 +1,7 @@
 import React from "react";
 
 const AdminAccountant = () => {
-  return <div>Accountant</div>;
+  return ;
 };
 
 export default AdminAccountant;

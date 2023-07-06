@@ -1,7 +1,7 @@
-import React from "react";
+import SideBar from "../../../components/SideBar";
 
 const AdminDashboard = () => {
-  return <div>Dashboard</div>;
+  return <SideBar />;
 };
 
 export default AdminDashboard;

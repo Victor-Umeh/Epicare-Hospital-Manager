@@ -1,6 +1,3 @@
-//icons
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 //components
 import SignUpHeader from "../../../../components/SignUpHeader";
 import SignUpFooter from "../../../../components/SignUpFooter";
@@ -23,10 +20,15 @@ const Login = () => {
             label="Email address"
             placeholder="example@gmail.com"
           />
-          <PasswordInput mt="mt-7" type="password" icon={faEyeSlash} />
+          <PasswordInput mt="mt-7" type="password" />
           <Button mt="mt-8" text="Proceed" />
         </form>
-        <SignUpFooter link="Forgot password?" />
+        <SignUpFooter
+          link="Forgot password?"
+          forgotPass="/forgotpassword"
+          signUp="/"
+          userLink="notAvailable"
+        />
       </section>
     </>
   );

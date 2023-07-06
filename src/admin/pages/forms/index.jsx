@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 
 //images
 import nurse from "../../../assets/images/nurse.jpg";
-import logo from "../../../assets/icons/epicare-light-logo.svg";
+import logo from "../../../assets/icons/epicare_light_logo.svg";
 
 //components
 import SignUpBanner from "../../../components/SignUpBanner";

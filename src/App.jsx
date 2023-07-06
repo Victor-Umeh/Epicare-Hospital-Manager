@@ -1,5 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+//Admin page
+import AdminDashboard from "./admin/pages/dashboard";
 
+//Forms
 import AdminLogin from "./admin/pages/forms";
 import Login from "./admin/pages/forms/components/Login";
 import CreateAccount from "./admin/pages/forms/components/CreateAccount";
@@ -19,6 +22,7 @@ const App = () => {
             <Route path="authentication" element={<Auth />}></Route>
             <Route path="resetPassword" element={<ResetPass />}></Route>
           </Route>
+          <Route path="/dashboard" element={<AdminDashboard />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
