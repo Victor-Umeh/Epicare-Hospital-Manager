@@ -12,8 +12,6 @@ import {
   BiPlusMedical,
 } from "react-icons/bi";
 // import { RxCross2 } from "react-icons/rx";
-// import { FiSearch } from "react-icons/fi";
-// import { VscColorMode } from "react-icons/vs";
 import { MdOutlineArrowDropDown } from "react-icons/md";
 
 import logo from "../assets/icons/epicare_dark_logo.svg";
@@ -56,7 +54,7 @@ const SideBar = () => {
       } h-screen  bg-accentGreen flex flex-col items-center py-8 fixed top-0 left-0 duration-500`}
     >
       <button
-        className="w-10 h-10 p-[8px] bg-slate-300 rounded-full shadow-xl absolute -right-5 top-[7rem] flex items-center justify-center opacity-90 duration-700 rotate-180"
+        className="w-10 h-10 p-[8px] bg-slate-300 rounded-full shadow-xl absolute -right-5 top-[8.5rem] flex items-center justify-center opacity-90 duration-700 rotate-180"
         onClick={() => {
           setExpanded(!expanded);
           !open ? setOpen(open) : setOpen(!open);
