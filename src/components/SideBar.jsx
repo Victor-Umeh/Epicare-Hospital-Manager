@@ -46,25 +46,27 @@ const menus = [
 ];
 
 const SideBar = () => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const [expanded, setExpanded] = useState(true);
 
   return (
     <aside
       className={`${
         expanded ? "w-[15%] max-w-[360px] min-w-[350px]" : "w-[4.5rem]"
-      } h-screen  bg-accentGreen flex flex-col items-center py-8 fixed top-0 left-0 duration-300`}
+      } h-screen  bg-accentGreen flex flex-col items-center py-8 fixed top-0 left-0 duration-500`}
     >
       <button
-        className={`w-10 h-10 p-[8px] bg-slate-300 rounded-full shadow-xl absolute -right-5 top-[7rem] flex items-center justify-center opacity-90 duration-700 rotate-180 ${
-          !expanded && "rotate-0"
-        }`}
+        className="w-10 h-10 p-[8px] bg-slate-300 rounded-full shadow-xl absolute -right-5 top-[7rem] flex items-center justify-center opacity-90 duration-700 rotate-180"
         onClick={() => {
           setExpanded(!expanded);
           !open ? setOpen(open) : setOpen(!open);
         }}
       >
-        <BiSolidChevronRight className="text-2xl fill-accentGreen" />
+        <BiSolidChevronRight
+          className={`text-2xl fill-accentGreen  ${
+            !expanded && "rotate-180"
+          } duration-500`}
+        />
       </button>
       <section
         className={`w-[100%] px-[5rem] ${
@@ -75,7 +77,7 @@ const SideBar = () => {
       </section>
       <nav
         className={`w-full flex-1 mt-[4rem] pt-[1.5rem] overflow-y-auto overflow-x-hidden ${
-          !expanded && "overflow-x-visible"
+          !expanded && "overflow-x-"
         } scrollbar`}
       >
         <ul className="w-full h-full flex flex-col gap-y-6">
@@ -84,18 +86,18 @@ const SideBar = () => {
               <li
                 key={index}
                 className={`flex items-center gap-x-5 text-[15px] text-white py-3 pl-[5rem] cursor-pointer ${
-                  !expanded && "pl-[1.6rem] py-3 "
+                  !expanded && "pl-[1.5rem] py-3"
                 }  ${
                   link.islogout && "mt-auto"
                 } group hover:bg-[#007075] duration-300`}
               >
                 <span>{!link.islogout && link.icon}</span>
                 <span
-                  className={`${link.islogout && "-ml-5"}${
+                  className={`${link.islogout && "-ml-5"} ${
                     link.islogout && !expanded && "hidden"
                   }  ${
                     !expanded &&
-                    "w-[max-content] absolute text-[10px] text-slate-800 text-left bg-slate-300 px-4 ml-[6rem] py-[3px] invisible  group-hover:ml-[3.3rem] group-hover:visible group-hover:transition-all group-hover:duratio-700 rounded-full"
+                    "w-[max-content] absolute text-[10px] text-slate-800 text-left bg-slate-300 px-4 ml-[6rem] py-[5px] invisible  group-hover:ml-[3.3rem] group-hover:visible group-hover:transition-all group-hover:duratio-700 rounded-full"
                   } `}
                 >
                   {link.title}
