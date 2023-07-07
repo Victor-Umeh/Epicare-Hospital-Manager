@@ -6,8 +6,8 @@ import { PiStethoscope, PiUserListLight } from "react-icons/pi";
 import SideBar from "../../../components/SideBar";
 import NavBar from "../../../components/NavBar";
 import Card from "./component/Card";
+import Table from "../../../components/ui-widgets/Table";
 import photo from "../../../assets/images/template.jpg";
-// import Chart from "./component/Chart";
 import {
   BarChart,
   Bar,
@@ -20,32 +20,30 @@ import {
 // import { Tooltip } from "flowbite-react";
 
 const data = [
-  { day: "Monday", Inpatient: 60, Outpatient: 45 },
-  { day: "Tuesday", Inpatient: 30, Outpatient: 15 },
-  { day: "Wednesday", Inpatient: 56, Outpatient: 88 },
-  { day: "Thursday", Inpatient: 120, Outpatient: 30 },
-  { day: "Friday", Inpatient: 20, Outpatient: 90 },
-  { day: "Saturday", Inpatient: 112, Outpatient: 67 },
-  { day: "Sunday", Inpatient: 49, Outpatient: 35 },
+  { day: "Monday", Inpatient: 80, Outpatient: 48 },
+  { day: "Tuesday", Inpatient: 67, Outpatient: 42 },
+  { day: "Wednesday", Inpatient: 98, Outpatient: 46 },
+  { day: "Thursday", Inpatient: 77, Outpatient: 118 },
+  { day: "Friday", Inpatient: 120, Outpatient: 84 },
+  { day: "Saturday", Inpatient: 78, Outpatient: 60 },
+  { day: "Sunday", Inpatient: 40, Outpatient: 63 },
 ];
 
 const AdminDashboard = () => {
   return (
     <main className="">
-      <section className="w-[max-content]">
-        <SideBar />
+      <SideBar />
+
+      <section className="w-full h-[140px] fixed top-0 z-20 ml-auto px-6 bg-white border-b border-slate-500">
+        <NavBar
+          themeIcon={<VscColorMode className="text-2xl text-slate-800" />}
+          searchIcon={<FiSearch className="text-2xl text-slate-800" />}
+          img={photo}
+        />
       </section>
-      <div className="w-full">
-        <section className="w-[80%] ml-auto px-6 border-b border-slate-700">
-          <NavBar
-            themeIcon={<VscColorMode className="text-2xl text-slate-800" />}
-            searchIcon={<FiSearch className="text-2xl text-slate-800" />}
-            img={photo}
-          />
-        </section>
-      </div>
-      <section className="w-[80%] ml-auto px-2">
-        <div className="flex justify-center gap-[5.5rem] items-center py-8">
+
+      <section className="w-[68%] ml-auto mr-7 mt-[10rem]">
+        <section className="grid grid-cols-4 py-8">
           <Card
             text="No. of Doctors"
             icon={<PiStethoscope className="text-xl" />}
@@ -66,22 +64,47 @@ const AdminDashboard = () => {
             icon={<PiStethoscope className="text-xl" />}
             num="500"
           />
-        </div>
-        <p className="my-14 text-2xl ml-[7rem]">Patient Statistics</p>
-        <BarChart
-          className="mx-auto w-full"
-          width={1100}
-          height={450}
-          data={data}
-        >
-          <CartesianGrid strokeDasharray="6" />
-          <XAxis dataKey="day" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Bar dataKey="Inpatient" fill="#09BC8A" />
-          <Bar dataKey="Outpatient" fill="#004346" />
-        </BarChart>
+        </section>
+        {/* bar chart */}
+        <section className="mb-8">
+          <p className="my-14 text-2xl ">Patient Statistics</p>
+          <BarChart
+            className="mr-5"
+            width={950}
+            height={450}
+            data={data}
+            margin={{ right: 20 }}
+          >
+            <CartesianGrid strokeDasharray="3 3" vertical={false} />
+            <XAxis dataKey="day" />
+            <YAxis
+              type="number"
+              domain={[0, 120]}
+              // interval={20}
+              ticks={[0, 20, 40, 60, 80, 100, 120]}
+            />
+            <Tooltip />
+            <Legend />
+            <Bar
+              dataKey="Inpatient"
+              fill="#09BC8A"
+              barSize={40}
+              margin={{ top: 10, bottom: 10 }}
+              barGap={20}
+            />
+            <Bar
+              dataKey="Outpatient"
+              fill="#004346"
+              barSize={40}
+              margin={{ top: 10, bottom: 10 }}
+              barGap={20}
+            />
+          </BarChart>
+        </section>
+        <section>
+          <p className="my-14 text-2xl ">Recent patients</p>
+          <Table />
+        </section>
       </section>
     </main>
   );

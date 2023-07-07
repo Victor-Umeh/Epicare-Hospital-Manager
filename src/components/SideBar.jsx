@@ -55,6 +55,34 @@ const menus = [
         title: <Link to="/accountant">Accountant</Link>,
         icon: <ImFileText2 className="text-xl" />,
       },
+      {
+        title: <Link to="/reception">Reception</Link>,
+        icon: <ImFileText2 className="text-xl" />,
+      },
+      {
+        title: <Link to="/mortuary">Mortuary</Link>,
+        icon: <ImFileText2 className="text-xl" />,
+      },
+      {
+        title: <Link to="/drugs">Drugs</Link>,
+        icon: <ImFileText2 className="text-xl" />,
+      },
+      {
+        title: <Link to="/wards">Wards</Link>,
+        icon: <ImFileText2 className="text-xl" />,
+      },
+      {
+        title: <Link to="/payment">Payment</Link>,
+        icon: <ImFileText2 className="text-xl" />,
+      },
+      {
+        title: <Link to="/birth">Birth</Link>,
+        icon: <ImFileText2 className="text-xl" />,
+      },
+      {
+        title: <Link to="/Death">Accountant</Link>,
+        icon: <ImFileText2 className="text-xl" />,
+      },
     ],
   },
   {
@@ -76,7 +104,7 @@ const SideBar = () => {
     <aside
       className={`${
         expanded ? "w-[15%] max-w-[360px] min-w-[350px]" : "w-[4.5rem]"
-      } h-screen  bg-accentGreen flex flex-col items-center py-8 fixed top-0 left-0 duration-500`}
+      } h-screen  bg-accentGreen flex flex-col items-center py-8 fixed top-0 left-0 z-40 duration-500`}
     >
       {/* <button
         className="w-10 h-10 p-[8px] bg-slate-300 rounded-full shadow-xl absolute -right-5 top-[8.5rem] flex items-center justify-center opacity-90 duration-700 rotate-180"

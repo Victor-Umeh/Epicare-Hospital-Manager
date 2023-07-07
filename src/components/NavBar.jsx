@@ -1,7 +1,7 @@
 const NavBar = ({ themeIcon, searchIcon, img }) => {
   return (
     <header>
-      <section className="w-[90%] mx-auto py-[2rem] flex justify-between items-start">
+      <section className="w-[68%] ml-auto py-[2rem] flex justify-between items-start fixed top-0 right-7">
         <div>
           <h1 className="text-3xl text-slate-800 font-bold mb-4">Dashboard</h1>
           <p className="text-3xl text-[#508991]">Hi, Benson Okaeme</p>
