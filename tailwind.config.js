@@ -17,6 +17,9 @@ export default {
         hoverBtn: "#09BC8A",
         placeholders: "#80A1A3", //redirect links
       },
+      boxShadow: {
+        "3xl": "0 0 40px  rgba(0, 0, 0, 0.05)",
+      },
     },
   },
   plugins: [require("flowbite/plugin")],

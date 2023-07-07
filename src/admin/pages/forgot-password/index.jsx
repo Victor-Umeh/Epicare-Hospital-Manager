@@ -1,5 +1,4 @@
-import Auth from "./component/Auth";
-
+import ForgotPass from "./component/ForgotPass";
 //images
 import nurse from "../../../assets/images/nurse.jpg";
 import logo from "../../../assets/icons/epicare_light_logo.svg";
@@ -7,13 +6,13 @@ import logo from "../../../assets/icons/epicare_light_logo.svg";
 //components
 import SignUpBanner from "../../../components/SignUpBanner";
 
-const AdminAuth = () => {
+const AdminForgotPassword = () => {
   return (
     <main className="h-screen">
       <section className="w-[50%] h-screen relative left-0 flex items-start justify-center">
         <section className="w-[60%] mx-auto pt-[74px]">
           <img className="w-[150px] mb-[8rem]" src={logo} alt="" />
-          <Auth />
+          <ForgotPass />
         </section>
       </section>
       <SignUpBanner img={nurse} />
@@ -21,4 +20,4 @@ const AdminAuth = () => {
   );
 };
 
-export default AdminAuth;
+export default AdminForgotPassword;

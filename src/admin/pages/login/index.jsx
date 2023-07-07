@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import Login from "./component/Login";
 
 //images
 import nurse from "../../../assets/images/nurse.jpg";
@@ -13,7 +13,7 @@ const AdminLogin = () => {
       <section className="w-[50%] h-screen relative left-0 flex items-start justify-center">
         <section className="w-[60%] mx-auto pt-[74px]">
           <img className="w-[150px] mb-[8rem]" src={logo} alt="" />
-          <Outlet />
+          <Login />
         </section>
       </section>
       <SignUpBanner img={nurse} />

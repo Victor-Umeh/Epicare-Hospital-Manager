@@ -4,6 +4,7 @@ import SignUpFooter from "../../../../components/SignUpFooter";
 import TextInput from "../../../../components/ui-widgets/TextInput";
 import PasswordInput from "../../../../components/ui-widgets/PasswordInput";
 import Button from "../../../../components/ui-widgets/Button";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   return (
@@ -21,13 +22,12 @@ const Login = () => {
             placeholder="example@gmail.com"
           />
           <PasswordInput mt="mt-7" type="password" />
-          <Button mt="mt-8" text="Proceed" />
+          <Link to="/dashboard"><Button mt="mt-8" text="Proceed" link="/dashboard"/></Link>
         </form>
         <SignUpFooter
           link="Forgot password?"
-          forgotPass="/forgotpassword"
           signUp="/"
-          userLink="notAvailable"
+          userLink="/"
         />
       </section>
     </>

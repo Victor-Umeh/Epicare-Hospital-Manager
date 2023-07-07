@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 //Icons
 import { SlCalender, SlUser, SlSettings, SlLogout } from "react-icons/sl";
 import { BsGrid1X2, BsBuildings, BsFilter } from "react-icons/bs";
@@ -17,27 +18,51 @@ import { MdOutlineArrowDropDown } from "react-icons/md";
 import logo from "../assets/icons/epicare_dark_logo.svg";
 
 const menus = [
-  { title: "Dashboard", icon: <BsGrid1X2 className="text-xl" /> },
-  { title: "Appointment", icon: <SlCalender className="text-xl" /> },
+  {
+    title: <Link to="/dashboard">Dashboard</Link>,
+    icon: <BsGrid1X2 className="text-xl" />,
+  },
+  {
+    title: <Link to="/appointment">Appointment</Link>,
+    icon: <SlCalender className="text-xl" />,
+  },
   { title: "Profile", icon: <SlUser className="text-xl" /> },
   {
-    title: "Department",
+    title: <Link to="/department">Department</Link>,
     icon: <BsBuildings className="text-xl" />,
     submenus: [
-      { title: "Doctors", icon: <PiStethoscope className="text-2xl" /> },
-      { title: "Patients", icon: <PiUserListLight className="text-2xl" /> },
-      { title: "Nurse", icon: <LiaUserNurseSolid className="text-2xl" /> },
       {
-        title: "Pharmacy",
+        title: <Link to="/doctors">Doctors</Link>,
+        icon: <PiStethoscope className="text-2xl" />,
+      },
+      {
+        title: <Link to="/patients">Patients</Link>,
+        icon: <PiUserListLight className="text-2xl" />,
+      },
+      {
+        title: <Link to="/nurse">Nurse</Link>,
+        icon: <LiaUserNurseSolid className="text-2xl" />,
+      },
+      {
+        title: <Link to="/pharmacy">Pharmacy</Link>,
         icon: <LiaCommentMedicalSolid className="text-2xl" />,
       },
-      { title: "Laboratory", icon: <LuFlaskConical className="text-2xl" /> },
-      { title: "Accountant", icon: <ImFileText2 className="text-xl" /> },
+      {
+        title: <Link to="/laboratory">Laboratory</Link>,
+        icon: <LuFlaskConical className="text-2xl" />,
+      },
+      {
+        title: <Link to="/accountant">Accountant</Link>,
+        icon: <ImFileText2 className="text-xl" />,
+      },
     ],
   },
-  { title: "Settings", icon: <SlSettings className="text-xl" /> },
   {
-    title: "Log out",
+    title: <Link to="/setting">Settings</Link>,
+    icon: <SlSettings className="text-xl" />,
+  },
+  {
+    title: <Link to="/log-out">Log out</Link>,
     icon: <SlLogout className={`text-[18px] rotate-180`} />,
     islogout: true,
   },
@@ -53,7 +78,7 @@ const SideBar = () => {
         expanded ? "w-[15%] max-w-[360px] min-w-[350px]" : "w-[4.5rem]"
       } h-screen  bg-accentGreen flex flex-col items-center py-8 fixed top-0 left-0 duration-500`}
     >
-      <button
+      {/* <button
         className="w-10 h-10 p-[8px] bg-slate-300 rounded-full shadow-xl absolute -right-5 top-[8.5rem] flex items-center justify-center opacity-90 duration-700 rotate-180"
         onClick={() => {
           setExpanded(!expanded);
@@ -65,7 +90,7 @@ const SideBar = () => {
             !expanded && "rotate-180"
           } duration-500`}
         />
-      </button>
+      </button> */}
       <section
         className={`w-[100%] px-[5rem] ${
           !expanded ? "w-[40px] overflow-hidden" : null
