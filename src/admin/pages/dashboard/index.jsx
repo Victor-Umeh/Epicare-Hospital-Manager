@@ -1,13 +1,6 @@
 import { FiSearch } from "react-icons/fi";
 import { VscColorMode } from "react-icons/vsc";
 import { PiStethoscope, PiUserListLight } from "react-icons/pi";
-
-//components
-import SideBar from "../../../components/SideBar";
-import NavBar from "../../../components/NavBar";
-import Card from "./component/Card";
-import Table from "../../../components/ui-widgets/Table";
-import photo from "../../../assets/images/template.jpg";
 import {
   BarChart,
   Bar,
@@ -17,7 +10,15 @@ import {
   YAxis,
   Tooltip,
 } from "recharts";
-// import { Tooltip } from "flowbite-react";
+
+//components
+import SideBar from "../../../components/SideBar";
+import NavBar from "../../../components/NavBar";
+import Card from "./component/Card";
+import Table from "../../../components/ui-widgets/TableHead";
+import photo from "../../../assets/images/template.jpg";
+import TableData from "../../../components/ui-widgets/TableData";
+import Calender from "../../../components/Calender";
 
 const data = [
   { day: "Monday", Inpatient: 80, Outpatient: 48 },
@@ -68,13 +69,7 @@ const AdminDashboard = () => {
         {/* bar chart */}
         <section className="mb-8">
           <p className="my-14 text-2xl ">Patient Statistics</p>
-          <BarChart
-            className="mr-5"
-            width={950}
-            height={450}
-            data={data}
-            margin={{ right: 20 }}
-          >
+          <BarChart width={900} height={450} data={data}>
             <CartesianGrid strokeDasharray="3 3" vertical={false} />
             <XAxis dataKey="day" />
             <YAxis
@@ -103,7 +98,8 @@ const AdminDashboard = () => {
         </section>
         <section>
           <p className="my-14 text-2xl ">Recent patients</p>
-          <Table />
+          <Table data={<TableData />} />
+          <Calender />
         </section>
       </section>
     </main>

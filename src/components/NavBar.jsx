@@ -17,7 +17,7 @@ const NavBar = ({ themeIcon, searchIcon, img }) => {
           <button className="flex items-center justify-center w-10 h-10  hover:bg-gray-100 rounded-full duration-500">
             {searchIcon}
           </button>
-          <div class="inline-flex items-center justify-center w-10 h-10 overflow-hidden bg-gray-100 rounded-full">
+          <div className="inline-flex items-center justify-center w-10 h-10 overflow-hidden bg-gray-100 rounded-full">
             <img src={img} alt="" />
           </div>
         </div>
