@@ -15,6 +15,7 @@ const AdminAppointments = () => {
           themeIcon={<VscColorMode className="text-2xl text-slate-800" />}
           searchIcon={<FiSearch className="text-2xl text-slate-800" />}
           img={photo}
+          headerText="Appointments"
         />
       </section>
       {/* content */}

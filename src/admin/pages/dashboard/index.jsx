@@ -18,7 +18,6 @@ import Card from "./component/Card";
 import Table from "../../../components/ui-widgets/TableHead";
 import photo from "../../../assets/images/template.jpg";
 import TableData from "../../../components/ui-widgets/TableData";
-import Calender from "../../../components/Calender";
 
 const data = [
   { day: "Monday", Inpatient: 80, Outpatient: 48 },
@@ -40,6 +39,7 @@ const AdminDashboard = () => {
           themeIcon={<VscColorMode className="text-2xl text-slate-800" />}
           searchIcon={<FiSearch className="text-2xl text-slate-800" />}
           img={photo}
+          headerText="Dashboard"
         />
       </section>
 
@@ -96,10 +96,9 @@ const AdminDashboard = () => {
             />
           </BarChart>
         </section>
-        <section>
+        <section className="pb-[2rem]">
           <p className="my-14 text-2xl ">Recent patients</p>
           <Table data={<TableData />} />
-          <Calender />
         </section>
       </section>
     </main>

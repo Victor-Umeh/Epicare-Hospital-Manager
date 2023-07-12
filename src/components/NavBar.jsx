@@ -1,9 +1,11 @@
-const NavBar = ({ themeIcon, searchIcon, img }) => {
+const NavBar = ({ themeIcon, searchIcon, img, headerText }) => {
   return (
     <header>
       <section className="w-[68%] ml-auto py-[2rem] flex justify-between items-start fixed top-0 right-7">
         <div>
-          <h1 className="text-3xl text-slate-800 font-bold mb-4">Dashboard</h1>
+          <h1 className="text-3xl text-slate-800 font-bold mb-4">
+            {headerText}
+          </h1>
           <p className="text-3xl text-[#508991]">Hi, Benson Okaeme</p>
         </div>
 

@@ -5,6 +5,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer utilities {
   .scrollbar {
     scrollbar-color: #09bc8a transparent;
@@ -23,19 +24,5 @@
     background-color: #38b2ac;
     border-radius: 50%;
     min-height: 50px;
-  }
-
-  /* calender styles */
-  .prev-button::before,
-  .next-button::before {
-    content: ""; /* Remove the default content (double arrow) */
-  }
-
-  .prev-button::after {
-    content: "←"; /* Add the desired content (single left arrow) */
-  }
-
-  .next-button::after {
-    content: "→"; /* Add the desired content (single right arrow) */
   }
 }

@@ -1,0 +1,66 @@
+.react-calendar__month-view__days__day--weekend {
+  color: #09bc8a !important;
+}
+abbr[title^="Saturday"],
+abbr[title^="Sunday"] {
+  color: #09bc8a !important;
+}
+abbr[title] {
+  text-decoration: none;
+}
+
+.react-calendar__navigation {
+  justify-items: center !important;
+  align-items: center !important;
+  margin: 0 auto;
+}
+
+.react-calendar__navigation__label {
+  font-size: 16px;
+  display: block;
+  background-color: #172a3a !important;
+  border-radius: 0.5rem;
+  max-width: max-content !important;
+  height: max-content;
+  color: white;
+  padding: 0.4rem 1rem;
+}
+.react-calendar__navigation__label:hover {
+  background: #172a3a !important;
+}
+.react-calendar__navigation__next-button {
+  margin-right: auto !important;
+}
+.react-calendar__navigation__prev-button {
+  margin-left: auto !important;
+}
+.react-calendar__navigation__prev-button:has(:hover) :has(:focus),
+.react-calendar__navigation__next-button:has(:hover) :has(:focus) {
+  background: transparent;
+  padding-bottom: 0.4rem;
+  display: inline-block;
+  padding-block: 1rem;
+}
+.react-calendar__navigation__arrow {
+  max-width: max-content !important;
+  font-size: 36px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+  background: transparent !important;
+}
+.react-calendar__month-view__weekdays__weekday {
+  text-decoration: none;
+}
+.react-calendar__viewContainer {
+  gap: 3rem !important;
+}
+.react-calendar__tile--now {
+  background-color: #172a3a !important;
+  color: #ffffff;
+  border-radius: 6px;
+}
