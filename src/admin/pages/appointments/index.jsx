@@ -25,7 +25,7 @@ const AdminAppointments = () => {
           <section className="w-[50%]">
             <Calender style="my-[4.8rem]" />
           </section>
-          <section className="w-[50%] h-[100%] text-2xl font-bold p-4 flex flex-col border-l border-slate-500 overflow-y-auto">
+          <section className="w-[50%] h-full text-2xl font-bold p-4 flex flex-col border-l border-slate-500 overflow-y-auto scrollbar">
             <Preview />
           </section>
         </section>
